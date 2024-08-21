@@ -1,7 +1,4 @@
 # Calculator
-## Project Details
-This project is related to a one line calculator in Python.
-
 ## Project Requirements
 #### One line
 - All of the users input must be only in one line eg; 8*8.
