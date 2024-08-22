@@ -19,3 +19,7 @@
 - A additional command allowing for debug must be included, this command should include the amount of times operations are changed, and any other information relevant to testing.
 - Another command must be working, this command should allow for the user to see the working that the system did to solve the equation.
 - Command formatting should be done with --, eg; 8 * * --debug
+
+#### Git Bash Commands
+- **cd {directory path location}** Opens the directory from the given path location
+- **code .** Opens the main code.
