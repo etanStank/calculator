@@ -1,4 +1,15 @@
 # Calculator
+## Project Structure
+src
+    solving.py
+        convert_string - convert to list
+        check_operations - spaces / no spaces
+        operations - convert math
+    terminal.py
+        input_checker
+        output
+        input
+
 ## Project Requirements
 #### One line
 - All of the users input must be only in one line eg; 8*8.
