@@ -12,7 +12,6 @@ from src.solving import convert_string
 from src.solving import calculate
 
 # -- GLOBALS -- #
-input
 
 # -- TERMINAL INPUT -- #
 
@@ -27,10 +26,10 @@ if correct_input ==  False:
     if input_check:
         correct_input = True
     else:
-        print(input_check)
+        print(f"{input_check}\n")
 
 # -- SOLVING -- #
 
-calculated_string = calculate(input)
+calculated_string = calculate(list)
 
 # -- OUTPUT -- #

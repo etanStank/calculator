@@ -1,11 +1,14 @@
+# -- FUNCTIONS -- #
+
 def convert_string(string):
-    # Converts string into list
+    '''
+    https://trello.com/c/z2vBybXd/25-convert-string
+    '''
     list = []
 
     for letter in string:
         list.append(letter)
     
-    # Check for spaces
     try:
         list.remove(" ")
     except:
