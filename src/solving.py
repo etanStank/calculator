@@ -7,6 +7,8 @@ operations = {
     "/": lambda numA, numB: numA / numB
 }
 
+debug_list = []
+
 # -- FUNCTIONS -- #
 
 def is_operation(item):
@@ -31,11 +33,14 @@ def convert_string(input_string):
         while '' in list:
             del list['']
     except:
-       return list
+       print("No spaces found")
     
     for item in list:
         item_index = list.index(item)
-        list[item_index] = int(item)
+        try:
+            list[item_index] = int(item)
+        except:
+         debug_list.append(f"{item} will be treated as operation.")
 
     return list
 
@@ -45,11 +50,20 @@ def calculate(list):
         for item in list:
             if is_operation(item):
                 item_index = list.index(item)
-                number_before = item_index - 1
-                number_after = item_index + 1
+                number_before_index = item_index - 1
+                number_after_index = item_index + 1
+                
+                number_before = list[number_before_index]
+                number_after = list[number_after_index]
+
+                # -- DEBUG -- #
+                debug_list.append(f"Item: {item}")
+                debug_list.append(f"Number Index: {item_index}")
+                debug_list.append(f"Number After: {number_after}")
+                debug_list.append(f"Number Before: {number_before}")
+
                 new_number = operations[item](number_before, number_after)
                 list[item_index] = new_number
                 del list[item_index - 1]
-                del list[item_index]  
-                print(list)   
-    return list
+                del list[item_index] 
+                return list

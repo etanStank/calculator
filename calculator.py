@@ -1,8 +1,5 @@
-# -- PROJECT -- #
-__version__ = "0.2.0"
-
 # -- TERMINAL -- #
-from src.terminal import input
+from src.terminal import generate_input
 from src.terminal import output
 from src.terminal import input_check
 
@@ -13,14 +10,18 @@ from src.solving import calculate
 
 # -- GLOBALS -- #
 
+__version__ = "1.2.1"
+
 # -- TERMINAL INPUT -- #
 
 correct_input = False
-list = convert_string(input)
 
 # Loops until correct_input is true
-if correct_input ==  False:
-    input = input()
+while correct_input ==  False:
+    input_string = generate_input()
+    list = convert_string(input_string)
+    print("yes")
+    
     input_check = input_check(list)
     
     if input_check:
@@ -28,8 +29,10 @@ if correct_input ==  False:
     else:
         print(f"{input_check}\n")
 
-# -- SOLVING -- #
+    # -- SOLVING -- #
 
-calculated_string = calculate(list)
+    calculated_string = calculate(list)
 
-# -- OUTPUT -- #
+    # -- OUTPUT -- #
+
+    output(str(calculated_string))

@@ -12,12 +12,12 @@ operations = [
 def output(calculated_output):
     print(calculated_output)
 
-def input():
+def generate_input():
     '''
     https://trello.com/c/yn4xRRCA/24-input
     '''
-    input = input("What would you like to calculate?\n")
-    return input
+    user_input = input("What would you like to calculate?\n")
+    return user_input
 
 def input_check(list):
     '''
@@ -30,4 +30,5 @@ def input_check(list):
                 return "Your equation contains a non-numeric value." 
     except Exception:
         return str(Exception)
+
     return True
