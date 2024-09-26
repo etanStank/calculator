@@ -4,13 +4,10 @@ operations = [
     "+",
     "-",
     "*",
-    "/"
+    "/",
 ]
 
 # -- FUNCTIONS -- #
-
-def output(calculated_output):
-    print(calculated_output)
 
 def generate_input():
     '''
@@ -23,12 +20,9 @@ def input_check(list):
     '''
     https://trello.com/c/iBEXpp9t/22-input-check
     '''
-    try:
-        for item in list:
-            numeric = item.isnumeric()
-            if not numeric and not operations:
-                return "Your equation contains a non-numeric value." 
-    except Exception:
-        return str(Exception)
-
+    for item in list:
+        if not (isinstance(item, int) or item in operations):
+            return "Your equation contains a non-numeric value."
+            break
     return True
+    

@@ -8,6 +8,7 @@ operations = {
 }
 
 debug_list = []
+working_list = []
 
 # -- FUNCTIONS -- #
 
@@ -21,30 +22,20 @@ def convert_string(input_string):
     '''
     https://trello.com/c/z2vBybXd/25-convert-string
     '''
-    list = []
-
-    for letter in input_string:
-        letter = letter.strip()
-        list.append(letter)
+    list = input_string.split()
     
-    try:
-        while ' ' in list:
-            del list[' ']
-        while '' in list:
-            del list['']
-    except:
-       print("No spaces found")
-    
-    for item in list:
-        item_index = list.index(item)
+    for item in range(len(list)):
         try:
-            list[item_index] = int(item)
-        except:
-         debug_list.append(f"{item} will be treated as operation.")
-
+            list[item] = int(list[item]) 
+        except ValueError:
+            pass
+            
     return list
 
 def calculate(list):
+    '''
+    https://trello.com/c/xj3vinav/27-calculate
+    '''
     full_index = len(list)
     while 0 < int(full_index):
         for item in list:
@@ -62,8 +53,11 @@ def calculate(list):
                 debug_list.append(f"Number After: {number_after}")
                 debug_list.append(f"Number Before: {number_before}")
 
+                # -- WORKING -- #
+                working_list.append(f"{number_before} {item} {number_after}")
+
                 new_number = operations[item](number_before, number_after)
                 list[item_index] = new_number
                 del list[item_index - 1]
                 del list[item_index] 
-                return list
+                return list, debug_list, working_list
