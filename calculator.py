@@ -1,3 +1,4 @@
+"""Main Handler for the calculator."""
 # -- TERMINAL -- #
 from src.terminal import generate_input
 from src.terminal import input_check
@@ -14,7 +15,7 @@ __version__ = "1.0.0"
 # -- TERMINAL INPUT -- #
 correct_input = False
 
-# -- INFORMATION -- #  
+# -- INFORMATION -- #
 print("Simple Python Calculator")
 print("The possible operations are,\n +, \n -, \n *, \n /")
 
@@ -22,9 +23,9 @@ print("The possible operations are,\n +, \n -, \n *, \n /")
 while not correct_input:
     input_string = generate_input()
     list = convert_string(input_string)
-    
+
     check_result = input_check(list)
-    
+
     if check_result is True:
         correct_input = True
 
