@@ -10,7 +10,7 @@ from src.solving import calculate
 
 # -- GLOBALS -- #
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # -- TERMINAL INPUT -- #
 correct_input = False
